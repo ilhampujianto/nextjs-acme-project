@@ -12,11 +12,12 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ProductPage({ params }: { params: { id: string } }) {
-  const product = products.find((item) => item.id === params.id);
+export default async function Page({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;  // ✅ Penanganan Promise
+  const product = products.find((p) => p.id === id);
 
   if (!product) {
-    return notFound();
+    notFound();
   }
 
   return (
