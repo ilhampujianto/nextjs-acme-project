@@ -6,6 +6,12 @@ const products = [
   { id: '3', name: 'AirPods Pro 2', price: 3500000, description: 'Earphone wireless dengan ANC dan spatial audio.' },
 ];
 
+export async function generateStaticParams() {
+  return products.map((product) => ({
+    id: product.id,
+  }));
+}
+
 export default function ProductPage({ params }: { params: { id: string } }) {
   const product = products.find((item) => item.id === params.id);
 
