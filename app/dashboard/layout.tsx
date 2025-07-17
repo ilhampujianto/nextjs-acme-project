@@ -26,7 +26,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <Link href="/dashboard/profile" className="text-gray-600 hover:text-blue-600">
               Profile
             </Link>
-            <Link href="/products/1" className="text-gray-600 hover:text-blue-600">Products</Link>
+            <Link href="/products" className="text-gray-600 hover:text-blue-600">Products</Link>
           </div>
           <div className="text-sm text-gray-500 hidden md:block">
             Halo, Ilham 👋
